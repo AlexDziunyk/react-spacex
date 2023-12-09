@@ -1,12 +1,28 @@
-import Navbar from './components/Navbar/Navbar'
 import './App.css'
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+
+import Root from './pages/Root/Root';
+import Home from './pages/Home/Home';
+
+const router = createBrowserRouter(createRoutesFromElements(
+  <>
+    <Route path='/' element={<Root />}>
+      <Route index element={<Home />}></Route>
+      <Route path='/favourites' element={<div>sd</div>}></Route>
+    </Route>
+  </>
+))
 
 function App() {
 
   return (
     <>
-      <Navbar />
-        
+      <RouterProvider router={router}/>
     </>
   )
 }

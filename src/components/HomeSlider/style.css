@@ -1,0 +1,43 @@
+.home-slider {
+  position: relative;
+}
+
+.home-slider__text {
+  position: absolute;
+  font-family: 'Syne', sans-serif;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.home-slider__smalltext, .home-slider__bigtext {
+  font-size: 48px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 800;
+  margin: 0;
+}
+
+.home-slider__bigtext {
+  font-size: 310px;
+}
+
+.home-slider__slide {
+  -webkit-filter: brightness(48%);
+  filter: brightness(48%);
+}
+
+.home-slider__dots {
+  top: -40px;
+  z-index: 50;
+}
+
+.slick-dots {
+  z-index: 100;
+  bottom: 100px; 
+}
