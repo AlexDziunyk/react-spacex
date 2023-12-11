@@ -31,7 +31,7 @@ const FavouritesTours = () => {
             <TourCard isLike={false} id={tour.id} name={tour.name} description={tour.description} image={tour.image}></TourCard>
           </div>
         ))}
-        {cardsArray.map((item: string, index: number) => (
+        {cardsArray.map((_: string, index: number) => (
           <div key={index} style={favouritesEmptyStyles} className="favourites-tours__empty"></div>
         ))}
       </div>
