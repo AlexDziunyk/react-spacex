@@ -1,14 +1,16 @@
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
+import { GetRocketsQuery } from "../../__generated__/graphql";
+import ToursSlider from "../ToursSlider/ToursSlider";
+import { gql } from "../../__generated__";
+import './style.css'
 
-const Tours = () => {
+interface ToursProps {
+  scrollRef: React.Ref<HTMLDivElement>;
+}
 
-  interface IGetRockets {
-    id: string;
-    name: string;
-    description: string;
-  }
+const Tours = ({scrollRef}: ToursProps) => {
 
-  const GET_ROCKETS = gql`
+  const GET_ROCKETS = gql(/* GraphQL */ `
     query GetRockets {
       rockets {
         id
@@ -16,19 +18,20 @@ const Tours = () => {
         description
       }
     }
-  `;
+  `);
 
-  const {loading, error, data} = useQuery(GET_ROCKETS);
+  const {loading, error, data} = useQuery<GetRocketsQuery>(GET_ROCKETS);
 
 
   if(loading) return <p>Loading...</p>;
   if(error) return <p>Error...</p>;
 
-  console.log(data);
 
   return (
-    <div>
-      {/* {data.rockets.map(({id, name, description}: IGetRockets))} */}
+    <div ref={scrollRef} className="tours">
+      <div className="tours__inner">
+        <ToursSlider rockets={data?.rockets}/>
+      </div>
     </div>
   )
 }

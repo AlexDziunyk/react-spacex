@@ -1,15 +1,21 @@
 import './style.css';
 
-import Slider from "../../components/Slider/Slider";
+import HeaderSlider from "../../components/HeaderSlider/HeaderSlider";
 import Tours from '../../components/Tours/Tours';
+import { useRef } from 'react';
 
 const Home = () => {
 
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleClickScroll = () => {
+    scrollRef.current?.scrollIntoView({behavior: 'smooth'});
+  }
     
   return (
     <div>
-      <Slider></Slider>
-      <Tours></Tours>
+      <HeaderSlider handleClickScroll={handleClickScroll}></HeaderSlider>
+      <Tours scrollRef={scrollRef}></Tours>
     </div>
   )
 }

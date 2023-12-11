@@ -5,8 +5,14 @@ import slide2 from '../../assets/images/sliderimg2.png';
 import slide3 from '../../assets/images/sliderimg3.png';
 import { useRef, useEffect } from 'react';
 
-const Slider = () => {
-  const timerRef = useRef<number | undefined>(undefined);
+
+interface HeaderSlider {
+  handleClickScroll: () => void;
+}
+
+
+const HeaderSlider = ({handleClickScroll}: HeaderSlider) => {
+  const timerRef = useRef<NodeJS.Timeout | undefined>(undefined);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const slides: string[] = [slide1, slide2, slide3];
@@ -25,6 +31,7 @@ const Slider = () => {
     return () => clearTimeout(timerRef.current);
   }, [currentIndex]);
 
+
   return (
     <div className='slider__container'>
       
@@ -35,7 +42,7 @@ const Slider = () => {
       <div className='slider'>
         <div className='slider__slides'>
           <div className='slider__explore'>
-            <p className='slider__explore__text'>Explore tours</p>
+            <p onClick={handleClickScroll} className='slider__explore__text'>Explore tours</p>
             <img src='src\assets\icons\arrow.svg' alt='arrow'></img>
           </div>
           {slides.map((item: string, index: number) => (
@@ -62,10 +69,9 @@ const Slider = () => {
             </div>
           ))}
         </div>
-        
       </div>
     </div>
   );
 };
 
-export default Slider;
+export default HeaderSlider;
