@@ -35,7 +35,7 @@ const TourCard = ({id, isLike, image, name, description}: TourCardProps) => {
         <img className='tour-card__img' src={image} alt='img'></img>
         <div className='tour-card__text'>
           <p className='tour-card__name'>{name}</p>
-          <p className='tour-card__description'>{description.length > 200 ? description.slice(0, 200) + "..." : description}</p>
+          <p className='tour-card__description'>{description}</p>
         </div>
       </div>
       <div className='tour-card__buttons'>
