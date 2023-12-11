@@ -42,7 +42,7 @@ export const LikeButton = ({onClick}: ButtonProps) => {
 export const DeleteButton = ({onClick}: ButtonProps) => {
   return (
     <ButtonContainer onClick={onClick}>
-      <img src="src\assets\icons\Delete.svg"></img>
+      <img src="/icons/Delete.svg"></img>
     </ButtonContainer>
   )
 }
