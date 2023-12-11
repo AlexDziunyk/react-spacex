@@ -75,3 +75,17 @@
   border-radius: 50%;
 }
 
+
+
+.slick-track {
+  display: flex !important;
+  align-items: stretch;
+}
+
+.slick-slide {
+  height: inherit !important;
+}
+
+.slick-slide > div {
+  height: 100%;
+}

@@ -16,8 +16,10 @@ import { useRef } from "react";
 const ToursSlider = ({rockets}: GetRocketsQuery) => {
 
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+
   
   const settings = {
+    // className: "",
     customPaging: function(index: number) {
       return (
         <div className="tours-slider__dot">
@@ -31,6 +33,9 @@ const ToursSlider = ({rockets}: GetRocketsQuery) => {
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
+    adaptiveHeight: false,
+    // variableWidth: true,
+    // adaptiveHeight: true,
     afterChange: (index: number) => {
       setCurrentIndex(index);
     }
@@ -53,11 +58,13 @@ const ToursSlider = ({rockets}: GetRocketsQuery) => {
           </button>
         </div>
       </div>
-      <Slider ref={slider} {...settings}>
-        {rockets?.map((item, index) => (
-        <TourCard key={item?.id} image={slides[index % slides.length]} name={item?.name!} description={item?.description!}></TourCard>
-        ))}
-      </Slider>
+      <div className="slider-slick"> 
+        <Slider className="slider-slick__container" ref={slider} {...settings}>
+          {rockets?.map((item, index) => (
+            <TourCard key={item?.id} id={item?.id!} isLike={true} image={slides[index % slides.length]} name={item?.name!} description={item?.description!}></TourCard>
+          ))}
+        </Slider>
+      </div>
     </div>
   )
 }
