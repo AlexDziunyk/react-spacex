@@ -19,7 +19,6 @@ const ToursSlider = ({rockets}: GetRocketsQuery) => {
 
   
   const settings = {
-    // className: "",
     customPaging: function(index: number) {
       return (
         <div className="tours-slider__dot">

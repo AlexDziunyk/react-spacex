@@ -11,10 +11,12 @@ const FavouritesTours = () => {
   const [cardsArray, setCardsArray] = useState<string[]>([]);
 
   useEffect(() => {
-    const arr = Array(3 - favTours.length).fill('card');
-    setCardsArray([...arr]);
+    if(favTours.length < 3) {
+      const arr = Array(3 - favTours.length).fill('card');
+      setCardsArray([...arr]);
+    }
   }, [favTours])
-
+  
   const favouritesEmptyStyles = {
     height: cardsArray.length === 3 ? "572px" : ''
   };

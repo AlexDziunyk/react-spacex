@@ -41,8 +41,8 @@ const HeaderSlider = ({handleClickScroll}: HeaderSlider) => {
       </div>
       <div className='slider'>
         <div className='slider__slides'>
-          <div className='slider__explore'>
-            <p onClick={handleClickScroll} className='slider__explore__text'>Explore tours</p>
+          <div onClick={handleClickScroll} className='slider__explore'>
+            <p className='slider__explore__text'>Explore tours</p>
             <img src='src\assets\icons\arrow.svg' alt='arrow'></img>
           </div>
           {slides.map((item: string, index: number) => (
