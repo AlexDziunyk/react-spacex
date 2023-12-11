@@ -34,8 +34,6 @@ const ToursSlider = ({rockets}: GetRocketsQuery) => {
     slidesToScroll: 1,
     arrows: false,
     adaptiveHeight: false,
-    // variableWidth: true,
-    // adaptiveHeight: true,
     afterChange: (index: number) => {
       setCurrentIndex(index);
     }

@@ -4,6 +4,10 @@ import styled from "styled-components";
 import whiteHeart from '../../assets/icons/whiteHeart.svg';
 import blackHeart from '../../assets/icons/blackHeart.svg';
 
+interface ButtonProps {
+  onClick: () => void;
+}
+
 const ButtonContainer = styled.button`
   display: flex;
   width: 53px;
@@ -24,20 +28,20 @@ const LikeButtonContainer = styled(ButtonContainer)`
   }
 `;
 
-export const LikeButton = () => {
+export const LikeButton = ({onClick}: ButtonProps) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   return ( 
-    <LikeButtonContainer onMouseLeave={() => setIsHovered(false)} onMouseEnter={() => setIsHovered(true)}>
+    <LikeButtonContainer onClick={onClick} onMouseLeave={() => setIsHovered(false)} onMouseEnter={() => setIsHovered(true)}>
       <img src={isHovered ? whiteHeart : blackHeart}></img>
     </LikeButtonContainer>
   )
 }
 
 
-export const DeleteButton = () => {
+export const DeleteButton = ({onClick}: ButtonProps) => {
   return (
-    <ButtonContainer>
+    <ButtonContainer onClick={onClick}>
       <img src="src\assets\icons\Delete.svg"></img>
     </ButtonContainer>
   )

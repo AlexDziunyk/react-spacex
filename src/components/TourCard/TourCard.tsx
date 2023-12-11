@@ -3,7 +3,6 @@ import { BlueButton } from '../Buttons/BlueButton';
 import { DeleteButton, LikeButton } from '../Buttons/GreyButtons';
 import './style.css';
 import { toursState } from '../../recoil/toursState';
-import { useEffect } from 'react';
 
 interface TourCardProps {
   id: string;
@@ -18,13 +17,16 @@ const TourCard = ({id, isLike, image, name, description}: TourCardProps) => {
   const [favTours, setFavTours] = useRecoilState(toursState);
 
   const likeTour = () => {
-    setFavTours(prev => [{id, image, name, description}, ...prev])
+    
+    if(!favTours.some(item => item.id === id))  {
+      setFavTours(prev => [{id, image, name, description}, ...prev]);
+      
+    }
   }
 
   const deleteTour = () => {
     setFavTours(prev => prev.filter(item => item.id !== id))
   }
-
 
 
   return (
