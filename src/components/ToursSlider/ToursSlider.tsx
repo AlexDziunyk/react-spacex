@@ -6,9 +6,9 @@ import TourCard from "../TourCard/TourCard";
 import './style.css';
 import { useState } from "react";
 
-import slide1 from '../../assets/images/sliderimg1.png';
-import slide2 from '../../assets/images/sliderimg2.png';
-import slide3 from '../../assets/images/sliderimg3.png';
+import slide1 from '/images/sliderimg1.png';
+import slide2 from '/images/sliderimg2.png';
+import slide3 from '/images/sliderimg3.png';
 
 
 import { useRef } from "react";
@@ -48,10 +48,10 @@ const ToursSlider = ({rockets}: GetRocketsQuery) => {
         <div className="tours-slider__title">popular tours</div>
         <div className="tours-slider__arrows">
           <button className="tours-slider__arrow" onClick={() => slider?.current?.slickPrev()}>
-            <img src="src\assets\icons\arrow_left.svg"></img>
+            <img src="/icons/arrow_left.svg"></img>
           </button>
           <button className="tours-slider__arrow" onClick={() => slider?.current?.slickNext()}>
-            <img src="src\assets\icons\arrow_right.svg"></img>
+            <img src="/icons/arrow_right.svg"></img>
           </button>
         </div>
       </div>

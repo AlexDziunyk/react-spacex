@@ -1,8 +1,8 @@
 import './style.css';
 import { useState } from 'react';
-import slide1 from '../../assets/images/sliderimg1.png';
-import slide2 from '../../assets/images/sliderimg2.png';
-import slide3 from '../../assets/images/sliderimg3.png';
+import slide1 from '/images/sliderimg1.png';
+import slide2 from '/images/sliderimg2.png';
+import slide3 from '/images/sliderimg3.png';
 import { useRef, useEffect } from 'react';
 
 
@@ -43,7 +43,7 @@ const HeaderSlider = ({handleClickScroll}: HeaderSlider) => {
         <div className='slider__slides'>
           <div onClick={handleClickScroll} className='slider__explore'>
             <p className='slider__explore__text'>Explore tours</p>
-            <img src='src\assets\icons\arrow.svg' alt='arrow'></img>
+            <img src='/icons/arrow.svg' alt='arrow'></img>
           </div>
           {slides.map((_: string, index: number) => (
             <div

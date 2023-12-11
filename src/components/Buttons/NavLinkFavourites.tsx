@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 import styled from "styled-components";
-import whiteHeart from '../../assets/icons/whiteHeart.svg';
-import blackHeart from '../../assets/icons/blackHeart.svg';
+import whiteHeart from '/icons/whiteHeart.svg';
+import blackHeart from '/icons/blackHeart.svg';
 import { NavLink } from "react-router-dom";
 
 const NavContainer = styled(NavLink)`
