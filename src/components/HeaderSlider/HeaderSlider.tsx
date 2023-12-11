@@ -45,7 +45,7 @@ const HeaderSlider = ({handleClickScroll}: HeaderSlider) => {
             <p className='slider__explore__text'>Explore tours</p>
             <img src='src\assets\icons\arrow.svg' alt='arrow'></img>
           </div>
-          {slides.map((item: string, index: number) => (
+          {slides.map((_: string, index: number) => (
             <div
               key={index}
               className={`slider__slide ${currentIndex === index ? 'active' : ''}`}
@@ -63,7 +63,7 @@ const HeaderSlider = ({handleClickScroll}: HeaderSlider) => {
           ))}
         </div>
         <div className='slider__dots'>
-          {slides.map((item: string, index: number) => (
+          {slides.map((_: string, index: number) => (
             <div key={index} className="slider__dot">
               {currentIndex === index && <div className="slider__dot_active"></div>}
             </div>
